@@ -1,0 +1,256 @@
+/* ====================================================
+   AURANGZEB MIRANI – Royal Dostana Department
+   Custom Stylesheet & Animations
+   ==================================================== */
+
+:root {
+  --color-gold: #fbbf24;
+  --color-gold-glow: rgba(251, 191, 36, 0.4);
+  --color-purple-glow: rgba(168, 85, 247, 0.35);
+  --color-cyan-glow: rgba(6, 182, 212, 0.35);
+  --color-pink-glow: rgba(236, 72, 153, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a13;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2px solid #070a13;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Ambient Animated Glowing Orbs in Background */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatAmbient 18s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  top: 5%;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #f59e0b 0%, transparent 70%);
+  top: 35%;
+  right: -120px;
+  animation-delay: -6s;
+  animation-duration: 22s;
+}
+
+.orb-3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #db2777 0%, transparent 70%);
+  bottom: 10%;
+  left: 20%;
+  animation-delay: -11s;
+  animation-duration: 26s;
+}
+
+@keyframes floatAmbient {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-80px) translateX(60px) scale(1.15);
+  }
+  100% {
+    transform: translateY(40px) translateX(-50px) scale(0.9);
+  }
+}
+
+/* Background Stars Pattern */
+.stars-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #fbbf24, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.35;
+}
+
+/* Radial Vignette */
+.bg-radial-vignette {
+  background: radial-gradient(ellipse at center, transparent 30%, #070a13 85%);
+}
+
+/* Ticker Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Shimmer Keyframes for Royal Titles */
+@keyframes shimmerEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmerEffect 4s linear infinite;
+}
+
+/* Floating Emoji Particle */
+.floating-emoji {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.65;
+  animation: floatUpwards linear infinite;
+}
+
+@keyframes floatUpwards {
+  0% {
+    transform: translateY(105vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Glassmorphism Card Hover Effects */
+.friend-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.friend-card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* Friendship Meter Gauge Circle */
+.stroke-dasharray-custom {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+}
+
+/* Modal Scale-up Keyframes */
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Royal VIP Glowing Border Pulse */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.4), inset 0 0 15px rgba(251, 191, 36, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(251, 191, 36, 0.7), inset 0 0 25px rgba(251, 191, 36, 0.35);
+  }
+}
+
+.mirani-gold-glow {
+  animation: goldPulse 3s infinite ease-in-out;
+}
+
+/* Toast Pop Notifications */
+.toast-item {
+  pointer-events: auto;
+  animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.toast-item.removing {
+  animation: toastSlideOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(80px) scale(0.9);
+  }
+}
